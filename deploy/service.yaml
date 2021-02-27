@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: gpip
+  name: gpip
+  namespace: gpip
+spec:
+  clusterIP: 10.0.213.142
+  ports:
+  - name: 80-5050
+    port: 80
+    protocol: TCP
+    targetPort: 5050
+  selector:
+    app: gpip
+  sessionAffinity: None
+  type: ClusterIP
